@@ -10,6 +10,7 @@ import { AuthResponse } from '../auth/AuthResponse';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   private url = environments.API_URL;
 
@@ -21,7 +22,7 @@ export class UserService {
   }
 
   authUser(requestDatas: AuthRequest): Observable<AuthResponse>{
-     return this.http.post<AuthResponse>(`${this.url}api/Auth`, requestDatas);
+     return this.http.post<AuthResponse>(`${this.url}api/User/auth`, requestDatas);
   }
 
 }
